@@ -1,6 +1,6 @@
 # Pokedex
 Test task for getting job in iDecisionGames.
-<img src="./public/pokelogo192.png" align="left">
+<img src="./public/pokelogo192.png" align="right">
 Create a simple application with the list of pokemons (pokedex) using the open [pokemon API](http://pokeapi.co).
 
 ## Requirements

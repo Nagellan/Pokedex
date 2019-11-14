@@ -1,7 +1,7 @@
 const webApiUrl = "https://pokeapi.co/api/v2/";
 
 class PokeService {
-  get = async (path, params={}) => {
+  get = async (path, params = {}) => {
     const urlParams = new URLSearchParams(Object.entries(params));
     const options = {
       method: "GET",

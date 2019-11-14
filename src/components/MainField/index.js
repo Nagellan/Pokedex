@@ -1,11 +1,13 @@
 import React from 'react';
 import './style.css';
 
+import PokeTable from '../PokeTable'
+
 function MainField() {
   return (
-    <div id="MainField"> 
+    <div className="MainField"> 
       <div className="container">
-        Main Field 
+        <PokeTable />
       </div>
     </div>
   );

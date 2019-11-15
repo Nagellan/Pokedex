@@ -21,12 +21,12 @@ Create a simple application with the list of pokemons (pokedex) using the open [
 ## Bonus tasks
 - [ ] Use React Hooks (https://reactjs.org/docs/hooks-intro.html), and the hooks-specific version of MobX (https://github.com/mobxjs/mobx-react-lite)
 - [ ] SASS, Stylus or any other css preprocessor
-- [ ] Webpack if applicable
-- [ ] CSS animations
+- [x] Webpack if applicable
+- [x] CSS animations
 - [ ] Unit testing
 
 ## Functionality
-- [ ] List pokemons in a table view (or cards) with their name, avatar, type (should visually look as a colored tag) and the main pokemon stats (whichever additional pokemon info you want to show)
+- [x] List pokemons in a table view (or cards) with their name, avatar, type (should visually look as a colored tag) and the main pokemon stats (whichever additional pokemon info you want to show)
 - [ ] The list must have a pagination with an ability to select how many items to show per page (10 / 20 / 50)
 - [ ] Filter the pokemons by name with a search box
 - [ ] Filter the pokemons by type using tags (multiple selected tags have to show pokemons with any of the types selected)

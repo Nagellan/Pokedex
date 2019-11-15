@@ -1,11 +1,6 @@
 .PokeTable {
-  padding: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-}
-
-.PokeTable > .Card:not(:nth-child(5n)) {
-  margin-right: 25px;
+  justify-content: flex-start;
 }

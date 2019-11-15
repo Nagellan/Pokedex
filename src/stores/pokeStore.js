@@ -6,6 +6,11 @@ class PokeStore {
   constructor() {
     this.cardsPerPage = 10;
     this.pokemonList = observable([]);
+    this.numOfCards = 0;
+  }
+
+  incrNumOfCards() {
+    this.numOfCards += 1;
   }
 
   updatePokemonList = async (offset) => {

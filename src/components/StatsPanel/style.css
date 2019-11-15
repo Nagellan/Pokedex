@@ -1,13 +1,18 @@
 .StatsPanel {
-  min-width: 280px;
-  width: 280px;
+  min-width: 330px;
+  width: 330px;
+  position: sticky;
+  top: 25px;
 
-  padding: 0 25px;
   margin-right: 30px;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
   border-radius: 15px;
 
   background-color: #fff;
+}
+
+.StatsPanel > * {
+  padding: 0 25px;
 }
 
 .StatsPanel .pokemon-name {
@@ -25,10 +30,14 @@
 .StatsPanel .info-wrapper {
   text-align: left;
   font-size: 18px;
+  overflow-y: auto;
+  max-height: calc(100vh - 145px);
+  text-align: center;
 }
 
 .StatsPanel .stats-block {
   margin-bottom: 15px;
+  text-align: left;
 }
 
 

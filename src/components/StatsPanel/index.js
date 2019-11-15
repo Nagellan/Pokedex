@@ -59,9 +59,9 @@ const StatsPanel = observer(
     render() {
       return (
         <aside className="StatsPanel">
-          <div className="pokemon-name">{pokeStore.currentPokemonName}</div>
+          <div className="pokemon-name">{pokeStore.currentPokemonName || "Pokemon Stats"}</div>
           <div className="info-wrapper">
-            {this.pokemonInfo}
+            {this.pokemonInfo || <img src={process.env.PUBLIC_URL + "/blue-pokeball.png"} alt="template pokeball" />}
             {this.abilities}
           </div>
         </aside>

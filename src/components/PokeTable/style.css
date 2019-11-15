@@ -6,6 +6,6 @@
   justify-content: center;
 }
 
-.PokeTable > .Card:not(:last-child) {
+.PokeTable > .Card:not(:nth-child(5n)) {
   margin-right: 25px;
 }

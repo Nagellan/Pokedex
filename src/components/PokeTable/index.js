@@ -6,6 +6,7 @@ import './style.css';
 import pokeStore from '../../stores/pokeStore'
 // import another used components
 import Card from '../Card'
+import { observable } from 'mobx'
 
 
 const PokeTable = observer(
@@ -13,20 +14,22 @@ const PokeTable = observer(
     constructor(props) {
       super(props);
       this.store = pokeStore;
+      this.cards = observable([]);
+      this.drawCards(0);
     }
 
-    drawCards() {
-      let cards = [];
-      this.store.getPokemonList().forEach((pokemonData) => {
-        cards.push(<Card key={pokemonData.name} pokemonData={pokemonData} />);
+    drawCards(offset) {
+      this.store.updatePokemonList(offset).then((response) => {
+        Object.values(response.results).forEach((pokemonData) => {
+          this.cards.push(<Card key={pokemonData.name} pokemonName={pokemonData.name} />);
+        });
       });
-      return cards;
     }
 
     render() {
       return (
         <div className="PokeTable">
-          {this.drawCards()}
+          {this.cards}
         </div>
       );
     }

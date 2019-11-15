@@ -1,12 +1,18 @@
 import pokeService from '../pokeService'
-import { observable } from 'mobx'
+import { observable, decorate, computed } from 'mobx';
 
 class PokeStore {
-
   constructor() {
     this.cardsPerPage = 10;
-    this.pokemonList = observable([]);
+    this.pokemonList = [];
     this.numOfCards = 0;
+    this.currentPokemonName = "";
+  }
+
+  getCurrentPokemon = computed(() => this.currentPokemonName);
+
+  updateCurrentPokemon(name) {
+    this.currentPokemonName = name;
   }
 
   incrNumOfCards() {
@@ -22,7 +28,17 @@ class PokeStore {
     const data = await pokeService.get("pokemon/" + name + "/");
     return data;
   }
+
+  getAbilityInfo = async(id) => {
+    const data = await pokeService.get("ability/" + id + "/");
+    return data;
+  }
 }
+
+decorate(PokeStore, {
+  currentPokemonName: observable,
+  getCurrentPokemon: observable
+});
 
 const pokeStore = new PokeStore();
 

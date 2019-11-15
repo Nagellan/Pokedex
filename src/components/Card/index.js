@@ -1,31 +1,35 @@
 import React from 'react';
-import styles from './style.css';
-import { observable } from 'mobx';
+import { observable, decorate } from 'mobx';
 import { observer } from 'mobx-react'
+// import project storage
 import pokeStore from '../../stores/pokeStore'
+// import component styles
+import './style.css';
 
 const Card = observer(
   class Card extends React.Component {
     constructor(props) {
       super(props);
-      this.store = pokeStore;
       this.pokemonData = observable({
-        imgUrl: process.env.PUBLIC_URL + "/blue-pokeball.png",
+        imgUrlFront: process.env.PUBLIC_URL + "/blue-pokeball.png",
+        imgUrlBack: process.env.PUBLIC_URL + "/blue-pokeball.png",
         types: []
       });
       this.typeIcons = observable([null]);
       this.transTranslate = observable([null]);
       this.updateData(this.props.pokemonName);
+      this.isFront = true;
     }
 
     componentDidMount() {
-      setTimeout(() => this.transTranslate[0] = "translate(0, 0)", + this.store.numOfCards*100);
-      this.store.incrNumOfCards();
+      setTimeout(() => this.transTranslate[0] = "translate(0, 0)", + pokeStore.numOfCards*100);
+      pokeStore.incrNumOfCards();
     }
 
     updateData(name) {
-      this.store.getPokemonInfo(name).then((response) => {
-        this.pokemonData.imgUrl = response.sprites.front_default;
+      pokeStore.getPokemonInfo(name).then((response) => {
+        this.pokemonData.imgUrlFront = response.sprites.front_default;
+        this.pokemonData.imgUrlBack = response.sprites.back_default;
         this.pokemonData.types = response.types.map(k => k.type.name);
         this.updateTypeIcons();
       });
@@ -45,11 +49,24 @@ const Card = observer(
       })
     }
 
+    switchAvatarView() {
+      this.isFront = !this.isFront;
+    }
+
     render() {
       return (
-        <div className="Card" style={{transform: this.transTranslate[0]}}>
+        <div
+          className={"Card" + (this.props.pokemonName === pokeStore.currentPokemonName ? " active" : "")}
+          style={{transform: this.transTranslate[0]}}
+          onClick={(e) => pokeStore.updateCurrentPokemon(this.props.pokemonName, e)}
+          onMouseEnter={(e) => this.switchAvatarView()}
+          onMouseLeave={(e) => this.switchAvatarView()}
+        >
           <div className="card-img-wrapper">
-            <img className="card-img" src={this.pokemonData.imgUrl} alt="Pokemon avatar" />
+            { this.isFront 
+            ? <img className="card-img" src={this.pokemonData.imgUrlFront} alt="Pokemon avatar" /> 
+            : <img className="card-img" src={this.pokemonData.imgUrlBack} alt="Pokemon avatar" /> 
+            }
           </div>
           <div className="card-name">{this.props.pokemonName}</div>
           <div className="card-types">{this.typeIcons}</div>
@@ -58,5 +75,9 @@ const Card = observer(
     }
   }
 )
+
+decorate(Card, {
+  isFront: observable
+});
 
 export default Card;

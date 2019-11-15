@@ -1,13 +1,12 @@
 import React from 'react';
+import { observable } from 'mobx'
 import { observer } from 'mobx-react'
+// import project storage
+import pokeStore from '../../stores/pokeStore'
+// import used components
+import Card from '../Card'
 // import component's styles
 import './style.css';
-// import stores
-import pokeStore from '../../stores/pokeStore'
-// import another used components
-import Card from '../Card'
-import { observable } from 'mobx'
-
 
 const PokeTable = observer(
   class PokeTable extends React.Component {

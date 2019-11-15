@@ -1,7 +1,8 @@
 import React from 'react';
-import './index.css';
 // import used components
 import MainField from './components/MainField'
+// import component styles
+import './index.css';
 
 function App() {
   return (

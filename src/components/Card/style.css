@@ -12,12 +12,15 @@
   transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.3s ease-in-out;
 }
 
-.Card:hover {
+.Card:hover,
+.Card.active {
+  cursor: pointer;
   box-shadow: 0px 8px 44px -15px rgba(0,0,0,0.15);
   background-color: white;
 }
 
-.Card:hover .card-img{
+.Card:hover .card-img,
+.Card.active .card-img{
   transform: scale(1.1);
 }
 

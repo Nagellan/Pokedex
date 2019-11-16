@@ -9,7 +9,7 @@ function MainField() {
   return (
     <div className="MainField"> 
       <div className="container">
-        <StatsPanel />
+        {/* <StatsPanel /> */}
         <PokeTable />
       </div>
     </div>

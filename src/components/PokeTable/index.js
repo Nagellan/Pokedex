@@ -1,5 +1,5 @@
 import React from 'react';
-import { observable } from 'mobx'
+import { decorate, observable, autorun, trace, extendObservable } from 'mobx';
 import { observer } from 'mobx-react'
 // import project storage
 import pokeStore from '../../stores/pokeStore'
@@ -8,31 +8,33 @@ import Card from '../Card'
 // import component's styles
 import './style.css';
 
-const PokeTable = observer(
-  class PokeTable extends React.Component {
-    constructor(props) {
-      super(props);
-      this.store = pokeStore;
-      this.cards = observable([]);
-      this.drawCards(0);
-    }
-
-    drawCards(offset) {
-      this.store.updatePokemonList(offset).then((response) => {
-        Object.values(response.results).forEach((pokemonData) => {
-          this.cards.push(<Card key={pokemonData.name} pokemonName={pokemonData.name} />);
-        });
-      });
-    }
-
-    render() {
-      return (
-        <div className="PokeTable">
-          {this.cards}
-        </div>
-      );
-    }
+class PokeTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.cards = [];
+    pokeStore.updatePokemonList();
   }
-)
 
-export default PokeTable;
+  drawCards = autorun(() => {
+    const pokemonList = pokeStore.pokemonList;
+    for (let i in pokemonList) {
+      setTimeout(() => this.cards.push(
+        <Card key={pokemonList[i]} pokemonName={pokemonList[i]} />
+      ), (i + 1) * 100);
+    }
+  })
+
+  render() {
+    return (
+      <div className="PokeTable">
+        <p>{this.cards.slice()}</p>
+      </div>
+    );
+  }
+}
+
+decorate(PokeTable, {
+  cards: observable
+});
+
+export default observer(PokeTable);

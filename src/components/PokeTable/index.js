@@ -1,5 +1,4 @@
 import React from 'react';
-import { decorate, observable, autorun, trace, extendObservable } from 'mobx';
 import { observer } from 'mobx-react'
 // import project storage
 import pokeStore from '../../stores/pokeStore'

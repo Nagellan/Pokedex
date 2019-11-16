@@ -11,30 +11,18 @@ import './style.css';
 class PokeTable extends React.Component {
   constructor(props) {
     super(props);
-    this.cards = [];
     pokeStore.updatePokemonList();
   }
-
-  drawCards = autorun(() => {
-    const pokemonList = pokeStore.pokemonList;
-    for (let i in pokemonList) {
-      setTimeout(() => this.cards.push(
-        <Card key={pokemonList[i]} pokemonName={pokemonList[i]} />
-      ), (i + 1) * 100);
-    }
-  })
 
   render() {
     return (
       <div className="PokeTable">
-        <p>{this.cards.slice()}</p>
+        {pokeStore.pokemonList.map((pokeName, index) => 
+          <Card key={pokeName} pokemonName={pokeName} index={index} />
+        )}
       </div>
     );
   }
 }
-
-decorate(PokeTable, {
-  cards: observable
-});
 
 export default observer(PokeTable);

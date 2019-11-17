@@ -1,0 +1,41 @@
+@import "./fonts/fonts.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-family: "PF Benchmark Pro";
+  background-color: #eef8ff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1800px;
+  margin: auto;
+}
+
+#App {
+  text-align: center;
+  color: #222;
+}
+
+#AppHeader {
+  padding: 20px 0;
+}
+
+#AppFooter {
+  padding: 20px 0;
+}
+
+#AppFooter a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#AppFooter a:hover{
+  text-decoration: underline; 
+}

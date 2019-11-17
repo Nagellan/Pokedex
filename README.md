@@ -1,6 +1,6 @@
 # Pokedex
 Test task for getting job in iDecisionGames.
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBLkcoHpgA_5C-PP7g9Cfc8oyKWT4A44auFdWuuEpActI3DbYS" align="left">
+<img src="./public/pokelogo192.png" align="right">
 Create a simple application with the list of pokemons (pokedex) using the open [pokemon API](http://pokeapi.co).
 
 ## Requirements
@@ -21,12 +21,41 @@ Create a simple application with the list of pokemons (pokedex) using the open [
 ## Bonus tasks
 - [ ] Use React Hooks (https://reactjs.org/docs/hooks-intro.html), and the hooks-specific version of MobX (https://github.com/mobxjs/mobx-react-lite)
 - [ ] SASS, Stylus or any other css preprocessor
-- [ ] Webpack if applicable
-- [ ] CSS animations
+- [x] Webpack if applicable
+- [x] CSS animations
 - [ ] Unit testing
 
 ## Functionality
-- [ ] List pokemons in a table view (or cards) with their name, avatar, type (should visually look as a colored tag) and the main pokemon stats (whichever additional pokemon info you want to show)
+- [x] List pokemons in a table view (or cards) with their name, avatar, type (should visually look as a colored tag) and the main pokemon stats (whichever additional pokemon info you want to show)
 - [ ] The list must have a pagination with an ability to select how many items to show per page (10 / 20 / 50)
 - [ ] Filter the pokemons by name with a search box
 - [ ] Filter the pokemons by type using tags (multiple selected tags have to show pokemons with any of the types selected)
+
+## How to run
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

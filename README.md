@@ -3,6 +3,8 @@ Test task for getting job in iDecisionGames.
 <img src="./public/pokelogo192.png" align="right">
 Create a simple application with the list of pokemons (pokedex) using the open [pokemon API](http://pokeapi.co).
 
+[Reports](#Reports)
+
 ## Requirements
 * The design of the app is not important, but the overall user experience and usability of the application should be good. Existing UI libraries like material ui or ant.design can be used
 * The app must be developed with [React.js](https://reactjs.org/) and [MobX](https://github.com/mobxjs/mobx) (or a MobX alternative with the same observable/reactivity concept, but not Redux) in ES6.
@@ -59,3 +61,29 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Reports
+
+### Version 0.1
+
+Provides getting the information about 10 first Pokemons in a database of Pokemon API.
+This information contains Pokemon's common statistics and abilities with their descriptions.
+It was designed and animated properly, site looks nice, but without the mobile versions yet (it's kept for further releases).
+
+#### Difficulties
+* This is my first project on React, so it took several hours to learn its basics (I had experience in Vue.js, that's why this was the least painful peoblem)
+* Also it took some more hours to learn Mobx, which I was faced to for the first time. This is the most problematic part. Initially I misunderstood some concepts and all the code I wrote haven't worked in production build. All information about Mobx at the internet is mixed, different approached are overlapping on each other.
+* It was hard to find the time to complete at least some part of the project qualitatively because of bunch of deadlines I have now.
+
+#### Outcomes
+* I switched on React from making project in pure javascript. I was interested in using React, but there always many thing to do, and this goal fade into background. 
+* Now I'm familiar with the concept of reactivity in Mobx, and at the last day I learnt how to use it correctly (finally).
+* I have my first project on React using Mobx, and it looks cute 😊 I really love it.
+* The project is really interesting for me, that's why I just rushed React and mobx for 3-5 days in a row. But it was cool.
+* I learnt in a good level React and Mobx for just several days. I think it's a good result, and in my opinion that's one of the most important employees' skiils - to be flexible, learn quickly and with great interest - many companies are looking for.
+
+#### Further development
+0. Think more about design imrpovements
+1. Add page switching
+2. Add search bar
+3. Add tags and number of pages shown switching

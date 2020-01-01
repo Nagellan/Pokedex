@@ -1,0 +1,33 @@
+#CardsNumSelector {
+  height: 100%;
+  padding: 0 18px;
+  border-radius: 15px;
+
+  font-weight: 400;
+  font-size: 20px;
+  color: #dbe4e9;
+
+  display: flex;
+  align-items: center;
+
+  background: white;
+}
+
+#CardsNumSelector .card-num {
+  cursor: pointer;
+}
+
+#CardsNumSelector .sep {
+  user-select: none;
+}
+
+#CardsNumSelector > .card-num:hover {
+  text-decoration: underline;
+}
+
+#CardsNumSelector > .card-num.active {
+  font-weight: 500;
+  user-select: none;
+  cursor: default;
+  text-decoration: none;
+}

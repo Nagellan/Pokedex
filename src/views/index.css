@@ -1,0 +1,21 @@
+#App {
+  text-align: center;
+  color: #222;
+}
+
+#AppHeader {
+  padding: 30px 0;
+}
+
+#AppFooter {
+  padding: 20px 0;
+}
+
+#AppFooter a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#AppFooter a:hover{
+  text-decoration: underline; 
+}

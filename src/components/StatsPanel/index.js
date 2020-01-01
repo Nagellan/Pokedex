@@ -77,13 +77,13 @@ class StatsPanel extends React.Component {
 
   render() {
     return (
-      <aside className="StatsPanel">
+      <div id="StatsPanel">
         <div className="pokemon-name">{pokeStore.currentPokemonName || "Pokemon Stats"}</div>
         <div className="info-wrapper">
-          {this.stats || <img src={process.env.PUBLIC_URL + "/blue-pokeball.png"} alt="template pokeball" />}
+          {this.stats || <img src={process.env.PUBLIC_URL + "img/blue-pokeball.png"} alt="template pokeball" />}
           {this.abilities}
         </div>
-      </aside>
+      </div>
     );
   }
 }

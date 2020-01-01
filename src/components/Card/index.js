@@ -11,8 +11,8 @@ class Card extends React.Component {
     super(props);
 
     this.pokemonData = {
-      imgUrlFront: process.env.PUBLIC_URL + "/blue-pokeball.png",
-      imgUrlBack: process.env.PUBLIC_URL + "/blue-pokeball.png",
+      imgUrlFront: process.env.PUBLIC_URL + "img/blue-pokeball.png",
+      imgUrlBack: process.env.PUBLIC_URL + "img/blue-pokeball.png",
       types: []
     };
     this.translate = "";
@@ -43,7 +43,7 @@ class Card extends React.Component {
     return this.pokemonData.types.map(type => 
       <img
         className="card-type"
-        src={process.env.PUBLIC_URL + "/types/" + type + ".png"} 
+        src={process.env.PUBLIC_URL + "img/types/" + type + ".png"} 
         alt={type}
         key={type}
         title={type}

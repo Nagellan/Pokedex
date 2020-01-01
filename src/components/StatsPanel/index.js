@@ -80,7 +80,7 @@ class StatsPanel extends React.Component {
       <div id="StatsPanel">
         <div className="pokemon-name">{pokeStore.currentPokemonName || "Pokemon Stats"}</div>
         <div className="info-wrapper">
-          {this.stats || <img src={process.env.PUBLIC_URL + "img/blue-pokeball.png"} alt="template pokeball" />}
+          {this.stats || <img src={process.env.PUBLIC_URL + "/img/blue-pokeball.png"} alt="template pokeball" />}
           {this.abilities}
         </div>
       </div>

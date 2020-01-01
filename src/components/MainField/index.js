@@ -6,8 +6,10 @@ import './style.css';
 
 function MainField() {
   return (
-    <div id="MainField"> 
+    <div id="MainField">
+      <div className="top-panel"></div>
       <PokeTable />
+      <div className="bottom-panel"></div>
     </div>
   );
 }

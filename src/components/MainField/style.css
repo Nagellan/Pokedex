@@ -1,0 +1,14 @@
+#MainField .top-panel {
+  height: 60px;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#MainField .bottom-panel {
+  height: 60px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}

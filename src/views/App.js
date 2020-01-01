@@ -2,7 +2,7 @@ import React from 'react';
 // import used components
 import Home from './Home'
 // import component styles
-import './index.css';
+import './style.css';
 
 function App() {
   return (

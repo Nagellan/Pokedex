@@ -3,7 +3,7 @@ import React from 'react';
 import AsidePanel from '../../components/AsidePanel'
 import MainField from '../../components/MainField'
 // import component styles
-import './index.css';
+import './style.css';
 
 function Home() {
   return (

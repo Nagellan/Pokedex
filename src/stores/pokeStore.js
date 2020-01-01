@@ -18,6 +18,10 @@ class PokeStore {
     });
   }
 
+  updateCardsPerPage(num) {
+    this.cardsPerPage = num;
+  }
+
   // using pokeService
   getPokemonList = async (offset) => {
     const data = await pokeService.get("pokemon/", {'offset': offset, 'limit': this.cardsPerPage});

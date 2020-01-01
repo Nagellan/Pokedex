@@ -1,7 +1,7 @@
 #MainField .top-panel {
   height: 60px;
   padding: 0 15px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   display: flex;
   justify-content: space-between;
 }

@@ -25,8 +25,8 @@ class PokeStore {
     this.cardsPerPage = num;
   }
 
-  updateCurrentPage(incr) {
-    this.currentPage = this.currentPage + (incr ? 1 : -1);
+  updateCurrentPage(num) {
+    this.currentPage = num;
   }
 
   // using pokeService

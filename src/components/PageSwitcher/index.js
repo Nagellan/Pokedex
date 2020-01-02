@@ -15,7 +15,7 @@ class PageSwitcher extends React.Component {
           alt="left arrow button"
           onClick={(e) => {
             if (pokeStore.currentPage !== 1) {
-              pokeStore.updateCurrentPage(0);
+              pokeStore.updateCurrentPage(pokeStore.currentPage - 1);
               pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage - pokeStore.cardsPerPage);
             }
           }}
@@ -27,7 +27,7 @@ class PageSwitcher extends React.Component {
           onClick={(e) => {
             if (pokeStore.numOfPokemons >= pokeStore.cardsPerPage*(pokeStore.currentPage)) {
               pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage);
-              pokeStore.updateCurrentPage(1);
+              pokeStore.updateCurrentPage(pokeStore.currentPage + 1);
             }
           }}
         />

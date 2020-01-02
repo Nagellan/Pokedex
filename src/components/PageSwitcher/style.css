@@ -16,3 +16,8 @@
   transform: scale3d(-1, 1, 1);
   margin-left: 18px;
 }
+
+#PageSwitcher .arrow.disabled {
+  opacity: 0.4;
+  cursor: default;
+}

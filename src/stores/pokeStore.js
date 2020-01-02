@@ -4,6 +4,7 @@ import pokeService from '../pokeService'
 class PokeStore {
   constructor() {
     this.cardsPerPage = 10;
+    this.currentPage = 1;
     this.pokemonList = [];
     this.currentPokemonName = "";
   }
@@ -20,6 +21,10 @@ class PokeStore {
 
   updateCardsPerPage(num) {
     this.cardsPerPage = num;
+  }
+
+  updateCurrentPage(incr) {
+    this.currentPage = this.currentPage + (incr ? 1 : -1);
   }
 
   // using pokeService
@@ -42,7 +47,8 @@ class PokeStore {
 decorate(PokeStore, {
   cardsPerPage: observable,
   pokemonList: observable,
-  currentPokemonName: observable
+  currentPokemonName: observable,
+  currentPage: observable
 });
 
 export default new PokeStore();

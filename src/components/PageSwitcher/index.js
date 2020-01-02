@@ -10,14 +10,24 @@ class PageSwitcher extends React.Component {
     return (
       <div id="PageSwitcher">
         <img
-          className="arrow"
+          className={"arrow" + (pokeStore.currentPage === 1 ? " disabled" : "")}
           src={process.env.PUBLIC_URL + "/img/arrow.svg"}
           alt="left arrow button"
+          onClick={(e) => {
+            if (pokeStore.currentPage !== 1) {
+              pokeStore.updateCurrentPage(0);
+              pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage - pokeStore.cardsPerPage);
+            }
+          }}
         />
         <img
           className="arrow right"
           src={process.env.PUBLIC_URL + "/img/arrow.svg"}
           alt="right arrow button"
+          onClick={(e) => {
+            pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage);
+            pokeStore.updateCurrentPage(1);
+          }}
         />
       </div>
     );

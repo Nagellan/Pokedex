@@ -21,12 +21,14 @@ class PageSwitcher extends React.Component {
           }}
         />
         <img
-          className="arrow right"
+          className={"arrow right" + (pokeStore.numOfPokemons < pokeStore.cardsPerPage*(pokeStore.currentPage) ? " disabled" : "")}
           src={process.env.PUBLIC_URL + "/img/arrow.svg"}
           alt="right arrow button"
           onClick={(e) => {
-            pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage);
-            pokeStore.updateCurrentPage(1);
+            if (pokeStore.numOfPokemons >= pokeStore.cardsPerPage*(pokeStore.currentPage)) {
+              pokeStore.updatePokemonList(pokeStore.currentPage*pokeStore.cardsPerPage);
+              pokeStore.updateCurrentPage(1);
+            }
           }}
         />
       </div>

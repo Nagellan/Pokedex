@@ -6,6 +6,8 @@ class PokeStore {
     this.cardsPerPage = 10;
     this.currentPage = 1;
     this.pokemonList = [];
+    this.numOfPokemons = Infinity;
+    this.updateAmountOfPokemons();
     this.currentPokemonName = "";
   }
 
@@ -41,6 +43,11 @@ class PokeStore {
   getAbilityInfo = async(id) => {
     const data = await pokeService.get("ability/" + id + "/");
     return data;
+  }
+
+  updateAmountOfPokemons = async () => {
+    const data = await pokeService.get("pokemon/");
+    this.numOfPokemons = data.count;
   }
 }
 

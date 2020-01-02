@@ -2,13 +2,16 @@
   height: 60px;
   padding: 0 15px;
   margin-bottom: 25px;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #MainField .bottom-panel {
   height: 60px;
   margin-top: 20px;
+
   display: flex;
   justify-content: center;
 }

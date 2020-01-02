@@ -20,9 +20,11 @@ class CardsNumSelector extends React.Component {
             key={"card-num-" + cardNum}
             className={"card-num" + ( pokeStore.cardsPerPage === cardNum ? " active" : "")}
             onClick={(e) => {
-              if (pokeStore.cardsPerPage !== cardNum)
+              if (pokeStore.cardsPerPage !== cardNum) {
                 pokeStore.updateCardsPerPage(cardNum);
-              pokeStore.updatePokemonList();
+                pokeStore.updatePokemonList();
+                pokeStore.updateCurrentPage(1);
+              }
             }}
           >
             { cardNum }

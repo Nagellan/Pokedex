@@ -4,7 +4,10 @@ import pokeService from '../pokeService'
 class PokeStore {
   constructor() {
     this.cardsPerPage = 10;
+    this.currentPage = 1;
     this.pokemonList = [];
+    this.numOfPokemons = Infinity;
+    this.updateAmountOfPokemons();
     this.currentPokemonName = "";
   }
 
@@ -22,6 +25,10 @@ class PokeStore {
     this.cardsPerPage = num;
   }
 
+  updateCurrentPage(num) {
+    this.currentPage = num;
+  }
+
   // using pokeService
   getPokemonList = async (offset) => {
     const data = await pokeService.get("pokemon/", {'offset': offset, 'limit': this.cardsPerPage});
@@ -37,12 +44,18 @@ class PokeStore {
     const data = await pokeService.get("ability/" + id + "/");
     return data;
   }
+
+  updateAmountOfPokemons = async () => {
+    const data = await pokeService.get("pokemon/");
+    this.numOfPokemons = data.count;
+  }
 }
 
 decorate(PokeStore, {
   cardsPerPage: observable,
   pokemonList: observable,
-  currentPokemonName: observable
+  currentPokemonName: observable,
+  currentPage: observable
 });
 
 export default new PokeStore();

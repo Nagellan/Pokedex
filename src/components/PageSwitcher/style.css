@@ -1,8 +1,7 @@
 #PageSwitcher .arrow {
   cursor: pointer;
 
-  height: 40px;
-  width: 25px;
+  width: 22px;
 
   filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.15));
   opacity: 0.8;

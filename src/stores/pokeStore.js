@@ -55,7 +55,8 @@ decorate(PokeStore, {
   cardsPerPage: observable,
   pokemonList: observable,
   currentPokemonName: observable,
-  currentPage: observable
+  currentPage: observable,
+  numOfPokemons: observable
 });
 
 export default new PokeStore();

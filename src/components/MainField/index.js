@@ -3,6 +3,7 @@ import React from 'react';
 import PokeTable from '../PokeTable'
 import CardsNumSelector from '../CardsNumSelector'
 import PageSwitcher from '../PageSwitcher'
+import PageSelector from '../PageSelector'
 // import component styles
 import './style.css';
 
@@ -16,7 +17,9 @@ function MainField() {
 
       <PokeTable />
 
-      <div className="bottom-panel"></div>
+      <div className="bottom-panel">
+        <PageSelector />
+      </div>
     </div>
   );
 }

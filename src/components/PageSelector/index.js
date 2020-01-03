@@ -16,6 +16,12 @@ class PageSelector extends React.Component {
       return (
         <div
           className={"page " + props.addClass + (+props.num === pokeStore.currentPage ? " active" : "")}
+          onClick={(e) => {
+            if (pokeStore.currentPage !== +props.num) {
+              pokeStore.updateCurrentPage(+props.num);
+              pokeStore.updatePokemonList(pokeStore.cardsPerPage*(+props.num - 1));
+            }
+          }}
         >
           { props.num }
         </div>

@@ -31,12 +31,21 @@
 }
 
 #PageSelector .page.active {
-  font-size: 25px;
+  cursor: default;
+
+  font-size: 23px;
   font-weight: 500;
+  color: #d5dde3;
 }
 
 #PageSelector .pages-closest {
+  padding: 0 5px;
   border-radius: 15px;
+
   display: flex;
   flex-direction: row;
+}
+
+#PageSelector .pages-closest .page {
+  width: 55px;
 }
